@@ -1,0 +1,20 @@
+@startuml
+
+opt
+	  Organisateur -> Application:Créer un compte
+end
+Organisateur -> Application: Authentification
+opt
+	  Organisateur -> Application: Editer le profil
+end
+opt
+	  Organisateur -> Application: Ajouter un menu
+end
+opt
+	  Organisateur -> Application: Consulter les réservations
+	  Application -> Organisateur:Afficher les réservations
+	  Organisateur -> Application: Répondre aux réservations
+	  Application -> BD: Stocker la réponse
+end
+
+@enduml

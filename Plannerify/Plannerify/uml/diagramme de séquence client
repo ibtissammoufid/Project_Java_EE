@@ -1,0 +1,21 @@
+@startuml
+
+opt
+	  Client -> Application:Créer un compte
+end
+Client -> Application: Authentification
+Client -> Application: Choisir un événement
+Application -> Client: Affichage des types des organisateurs
+Client -> Application: Choisir un type
+Application -> Client: Affichage des menus
+opt
+	  Client -> Application:Visiter un organisateur
+	  Application -> Client: Affichage du profil organisateur
+end
+opt
+	  Client -> Application:Choisir un menu
+	  Client -> Application:Réserver l'organisateur
+	  Application -> BD: Stocker la resérvation
+end
+
+@enduml

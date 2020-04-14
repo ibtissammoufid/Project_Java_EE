@@ -1,0 +1,36 @@
+@startuml
+
+title Use Case Diagram 
+
+
+(Choisir une fête à organiser)
+(Choisir un organisateur et un budget) as (Proc1)
+usecase (Trier les profils des organisateur par prix/rating/nbre de réservation)
+usecase (Réserver un organisateur) as UC4
+usecase (Evaluer et commenter) as UC5
+usecase (S'authentifier) as UC6
+usecase (orga un marriage) as UC7
+usecase (orga anniversaire) as UC8
+usecase (orga soutenance) as UC9
+usecase (orga fiançailles) as UC10
+usecase (orga autres) as UC11
+
+:Client:
+Client -> (Choisir une fête à organiser)
+Client -> (Proc1)
+Client -> (Trier les profils des organisateur par prix/rating/nbre de réservation)
+Client -> (UC4)
+
+(Choisir une fête à organiser) <|-- (UC7)
+(Choisir une fête à organiser) <|-- (UC8)
+(Choisir une fête à organiser) <|-- (UC9)
+(Choisir une fête à organiser) <|-- (UC10)
+(Choisir une fête à organiser) <|-- (UC11)
+
+(Choisir une fête à organiser) .> (UC6) : include
+(Proc1) .> (UC6) : include
+(Trier les profils des organisateur par prix/rating/nbre de réservation) .> (UC6) : include
+(UC4) .> (UC6) : include
+(UC5) .> (UC4) : include
+
+@enduml
